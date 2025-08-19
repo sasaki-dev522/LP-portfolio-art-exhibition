@@ -11,7 +11,7 @@
 
 .first-view__inner::before {
   content: "";
-  position: static; /* 背景をビューポートに固定 */
+  position: absolute; /* 背景をビューポートに固定 */
   top: 0;
   left: 0;
   width: 100%;
