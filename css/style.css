@@ -70,7 +70,8 @@ h1{
     height: 100vh;
     background-position: 25% 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+
+    background-attachment: scroll; 
     background-size: cover;
 }
 
@@ -217,6 +218,11 @@ h3{
 }
 
 @media (min-width:580px){
+    .parallax {
+
+    background-attachment: fixed;
+
+}
 
     .slick-slider{
     width: 90%;
