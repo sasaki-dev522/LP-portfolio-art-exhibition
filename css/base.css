@@ -1,0 +1,165 @@
+@charset "utf-8";
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* リセットcssここまで */
+
+.background {
+  background-image: url("../img/blue-mountain.jpg");
+  background-attachment: fixed; 
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  /* animation: parallax-move 40s linear infinite alternate;  */
+}
+
+/* @keyframes parallax-move {
+  0% {
+    background-position: 100% 0%; 
+  }
+  100% {
+    background-position: 100% 100%; 
+  }
+} */
+
+.fadeup,h2 {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fadeup.is-visible,h2.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay02 {
+    transition-delay: 0.2s;
+}
+
+/* 0.4秒の遅延を設定するクラス */
+.delay04 {
+    transition-delay: 0.4s;
+}
+
+/* Noto Sans JP を適用したい要素に */
+.noto-sans-jp,body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Zen Old Mincho を適用したい要素に */
+.zen-old-mincho {
+  font-family: "Zen Old Mincho", serif;
+}
+
+/* 太さを変更したい場合は、font-weightプロパティを使用 */
+.zen-old-mincho-bold,h1,h2,h3{
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+}
+
+/*== ボタン共通設定 */
+.btn{
+    /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+    overflow: hidden;
+	display: inline-block;
+    padding: 10px 30px;
+    text-align: center;
+    transition: ease .2s;
+    border-radius: 10px;
+    border: #dc5a5a 2px solid;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg,#f8ea50 0%,  #e28965 100%);
+     background-position: 1% 100%;
+     background-size: 200% auto;
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+	position: relative;
+	z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+	color:#333;
+}
+
+.btn:hover span{
+	color:#333;
+}
+
+
+/*== 背景が流れる（斜め） */
+.bgskew::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -130%;
+	background:#fff;
+    opacity: 0.4;
+	width:120%;
+	height: 100%;
+	transform: skewX(-25deg);
+}
+
+/*hoverした時のアニメーション*/
+.bgskew:hover::before {
+	animation: skewanime .5s forwards;/*アニメーションの名前と速度を定義*/
+}
+
+@keyframes skewanime {
+	100% {
+		left:-10%;/*画面の見えていない左から右へ移動する終了地点*/
+	}
+}
+
+
+/* .gradient1:hover {
+    color: #fff;
+    background-position: 99% 50%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+} */
+
+h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.u-flex{
+  display: flex;
+}
+
+.u-column{
+  flex-direction: column;
+}
+
+.u-row{
+  flex-direction: row;
+}
+
